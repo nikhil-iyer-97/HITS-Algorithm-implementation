@@ -1,0 +1,11 @@
+Requirements:
+
+1. python3
+2. pip3
+3. Various python packages required are listed in requirements.txt 
+
+Usage:
+
+1. Ensure the working directory is the top-level directory of this project
+2. Install the required packages using "pip3 install -r requirements.txt"
+3. Change working directory to "src" and then use "python3 hits.py" 
