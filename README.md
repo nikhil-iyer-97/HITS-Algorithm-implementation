@@ -13,14 +13,14 @@ to store a map from matrix index to user id) for repeated use with the HITS algo
 
 File Structure
 ---------------
-/src (directory) – Contains python source files
+[src](src) (directory) – Contains python source files
 
 	/hits.py – Implements the HITS algorithm
   
 	/dataset_fetcher.py – Fetches the dataset using the Twitter API
 
 
-/data (directory) – Contains the structures saved after obtaining the dataset
+[data](data) (directory) – Contains the structures saved after obtaining the dataset
 
 	/adj_list – Adjacency list representing the fetched dataset
   
@@ -33,7 +33,7 @@ File Structure
 	/users – Users information
 
 
-/docs
+[docs](docs) (directory) - Contains the documentation for the various components
 	
 	/dataset_fetcher.html – doc for dataset_fetcher.py
   
@@ -44,16 +44,35 @@ File Structure
 Usage:
 ------
 - Download/Clone this repository
+```bash
+git clone https://github.com/nikhil-iyer-97/HITS-Algorithm-implementation.git
+```
 - Change working directory to the where the repository is located
+```bash
+cd HITS-Algorithm-implementation
+```
 - Install dependencies:
-	```
-	pip install -r requirements.txt
-	```
-  - Change working directory to `src`:
-	```
-	cd src
-	```
-  Now enter "python3 hits.py" for the program to run and display outputs.
+```bash
+pip install -r requirements.txt
+```
+- Change working directory to `src`:
+```bash
+cd src
+```
+  Now enter `python3 hits.py` for the program to run and display outputs.
   
-  The pictorial graphs displayed after running the source code indicate the hubs score and authorities score for the first 30
-  nodes in the graph.
+Example:
+--------
+Some example outputs for hubbiness scores and authority scores for the first 30 nodes in the graph are shown below:
+![Hubbiness Scores](/docs/hubbiness_scores.png)
+![Authority Scores](/docs/authority_scores.png)
+
+The change in hub score and authority score with respect to a few selected entities were measured, resulting in:
+![Change in Hubbiness Score vs Iterations](/docs/hubs.png)
+![Change in Authority Score vs Iterations](/docs/auths.png)
+
+And finally, the algorithm was benchmarked on Sparse Matrix vs Normal Matrix implementations for various values of <a href="https://www.codecogs.com/eqnedit.php?latex=\epsilon" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\epsilon" title="\epsilon" /></a>:
+
+![Time taken to run HITS algorithm](/docs/stats.png)
+
+
